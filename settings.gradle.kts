@@ -1,0 +1,1 @@
+rootProject.name = "eOCS-Branch-Name-Generator"
