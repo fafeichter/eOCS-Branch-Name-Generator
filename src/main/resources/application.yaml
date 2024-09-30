@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: eOCS-Branch-Name-Generator
+  main:
+    banner-mode: off
+    web-application-type: NONE
+  ai:
+    openai:
+      api-key: your-api-key-here
+      chat:
+        options:
+          model: gpt-4o-mini
+          temperature: 0
+
+jira:
+  url: https://jira.eurofunk.com/
+  api-key: your-api-key-here
+
+logging:
+  level:
+    root: ERROR
