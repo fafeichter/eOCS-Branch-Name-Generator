@@ -34,13 +34,14 @@ The compiled binary will be located in `build/native/nativeCompile/`.
 To install, add the following alias to your shell configuration file (e.g., `.zshrc`, `.bashrc`, etc.):
 
 ```zsh
+# eOCS-Branch-Name-Generator
 alias j='() {
     branch_name=$(/path/to/eOCS-Branch-Name-Generator $1 $2 \
       --jira.api-key=YOUR_JIRA_API_KEY \
       --spring.ai.openai.api-key=YOUR_OPENAI_API_KEY 2>&1)
 
     if [ $? -eq 0 ]; then
-        if git rev-parse --verify "$branch_name" >/dev/null; then
+        if git show-ref --quiet refs/heads/"$branch_name"; then
             git checkout "$branch_name"
         else
             git checkout -b "$branch_name" && git push -u origin
