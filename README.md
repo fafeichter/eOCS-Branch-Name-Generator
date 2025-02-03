@@ -43,7 +43,7 @@ alias j='() {
         if git rev-parse --verify "$branch_name" >/dev/null; then
             git checkout "$branch_name"
         else
-            git checkout -b "$branch_name"
+            git checkout -b "$branch_name" && git push -u origin
         fi
     else
         echo "$branch_name"
