@@ -6,7 +6,7 @@ spring:
     web-application-type: NONE
   ai:
     openai:
-      api-key: your-api-key-here
+      api-key: <your-api-key-here>
       chat:
         options:
           model: gpt-4o-mini
@@ -14,7 +14,7 @@ spring:
 
 jira:
   url: https://jira.eurofunk.com/
-  api-key: your-api-key-here
+  api-key: <your-api-key-here>
 
 logging:
   level:

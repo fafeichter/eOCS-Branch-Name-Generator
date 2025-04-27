@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="EocsBranchNameGeneratorApplication"
+                   type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+        <option name="ACTIVE_PROFILES" value="dev"/>
+        <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources"/>
+        <module name="eOCS-Branch-Name-Generator.main"/>
+        <option name="PROGRAM_PARAMETERS" value="SWEET-4171"/>
+        <selectedOptions>
+            <option name="environmentVariables"/>
+        </selectedOptions>
+        <option name="SPRING_BOOT_MAIN_CLASS"
+                value="com.fafeichter.eocs.branchnamegenerator.EocsBranchNameGeneratorApplication"/>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+        </method>
+    </configuration>
+</component>
