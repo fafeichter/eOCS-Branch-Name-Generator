@@ -23,7 +23,7 @@ public class TaskSlugService {
             Generate a task slug to describe the context of the development task titled "{taskTitle}" using the
             following guidelines:
             
-            - Limit the length to a maximum of {maxLength} characters.
+            - Limit the length to a maximum of {maxLength} characters. Trim the slug if necessary.
             - Ensure the slug is not a full sentence.
             - Only use allowed characters: letters (a-z), digits, hyphens, and underscores.
             - Replace umlauts: "ä" → "ae", "ö" → "oe", "ü" → "ue"; avoid "ß" when possible.
