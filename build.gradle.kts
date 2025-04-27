@@ -1,8 +1,8 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.3.4"
-    id("io.spring.dependency-management") version "1.1.6"
-    id("org.graalvm.buildtools.native") version "0.10.3"
+    id("org.springframework.boot") version "3.4.5"
+    id("io.spring.dependency-management") version "1.1.7"
+    id("org.graalvm.buildtools.native") version "0.10.6"
 }
 
 group = "com.fafeichter.eocs"
@@ -26,20 +26,19 @@ repositories {
     maven { url = uri("https://packages.atlassian.com/maven/repository/public") }
 }
 
-extra["springAiVersion"] = "1.0.0-M2"
-extra["jerseyVersion"] = "2.35"
-extra["jersey.version"] = "2.35"
-
+extra["springAiVersion"] = "1.0.0-M5"
 dependencies {
     implementation("org.springframework.ai:spring-ai-openai-spring-boot-starter")
-    implementation("com.atlassian.jira:jira-rest-java-client-core:5.2.5") {
+    implementation("com.atlassian.jira:jira-rest-java-client-core:6.0.2") {
         exclude(group = "org.glassfish.jersey.core", module = "jersey-common")
             .because("Jira REST client still uses Java EE instead of Jakarta EE")
     }
-    implementation("org.glassfish.jersey.core:jersey-common:2.27")
-    implementation("org.springframework.boot:spring-boot-starter-jersey:3.3.4")
-    implementation("joda-time:joda-time:2.13.0")
-    implementation("io.atlassian.fugue:fugue:6.1.0")
+    implementation("org.glassfish.jersey.core:jersey-common:2.27") {
+        because("Jersey 2.27 is the last version that uses Java EE required by Jira REST client")
+    }
+    implementation("io.atlassian.fugue:fugue:6.1.2") {
+        because("Required by JIRA REST client")
+    }
     implementation("org.springframework.boot:spring-boot-starter-validation")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
